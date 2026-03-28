@@ -1,1 +1,8 @@
-
+pwd
+ls
+cat custom.rules
+sudo suricata -r sample.pcap -S custom.rules -k none
+ls -l /var/log/suricata
+cat /var/log/suricata/fast.log
+cat /var/log/suricata/eve.json
+jq -c '[.timestamp,.flow_id,.alert.signature,.proto,.dest_ip]' /var/log/suricata/eve.json
